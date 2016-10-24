@@ -1,0 +1,19 @@
+.container {
+    flex:1 auto;
+    padding:10px;
+    list-style:none;
+    background:#dfdfdf;
+    margin:0 5px;
+}
+
+.name {
+    display: block;
+    margin: 0;
+}
+.price {
+    font-size:1.3rem;
+}
+.button {
+    display: block;
+    margin:10px auto;
+}

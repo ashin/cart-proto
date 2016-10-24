@@ -1,0 +1,15 @@
+.list {
+    padding-left: 30px;
+}
+.item {
+    margin:10px 0;
+}
+.count {
+    margin:0 3px;
+    display: inline-block;
+}
+.type {
+    font-weight:bold;
+    margin:0 3px;
+    display: inline-block;
+}
