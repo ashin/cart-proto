@@ -1,21 +1,31 @@
 import { v4 } from 'node-uuid';
 import * as deals from './deals';
 
+const standardDeals = [{
+    rule: deals.buildFreeMembershipDiscount(10),
+    id: v4(),
+    text: 'Buy 10 ads and recieve free membership',
+}];
 const fakeDB = {
     companies: [
         {
             id: v4(),
             name: 'Default',
-            deals: [],
+            deals: [
+                ...standardDeals,
+            ],
         },
         {
             id: v4(),
             name: 'Unilever',
-            deals: [{
-                rule: deals.buildNForM(3, 2, 'classic'),
-                id: v4(),
-                text: 'Gets a for 3 for 2 deal on Classic Ads',
-            }],
+            deals: [
+                ...standardDeals,
+                {
+                    rule: deals.buildNForM(3, 2, 'classic'),
+                    id: v4(),
+                    text: 'Gets a for 3 for 2 deal on Classic Ads',
+                },
+            ],
         },
         {
             id: v4(),
@@ -70,6 +80,11 @@ const fakeDB = {
             id: 'premium',
             name: 'Premium Ad',
             price: 394.99
+        },
+        {
+            id: 'membership',
+            name: 'Membership',
+            price: 99.00
         },
     ],
 };

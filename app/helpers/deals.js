@@ -22,3 +22,15 @@ export const buildTypeDiscountWithMinimum = (price, type, minimum) => (cartItems
     }
     return cartItemsToPayFor;
 };
+
+export const buildFreeMembershipDiscount = cartItemThreshold => (cartItems = {}, cartItemsToPayFor = {}) => {
+    const cartTotal = Object.keys(cartItems).map(key => cartItems[key])
+        .filter(item => item.id !== 'membership')
+        .map(item => item.count)
+        .reduce((total, count) => count + total);
+    if (cartTotal >= cartItemThreshold) {
+        cartItemsToPayFor['membership'].price = 0.00;
+    }
+
+    return cartItemsToPayFor;
+};

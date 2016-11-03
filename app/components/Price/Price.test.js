@@ -7,8 +7,8 @@ chai.use(spies);
 import Price from './Price';
 
 describe("<Price />", function() {
-  it("to display proper formatted price", function() {
-    const wrapper = shallow(<Price price={123.45}/>);
-    expect(wrapper.text()).to.equal('$123.45');
-  });
+	it("to display proper formatted price", function() {
+		const wrapper = shallow(<Price price={123.45}/>);
+		expect(wrapper.text()).to.equal('$123.45');
+	});
 });
